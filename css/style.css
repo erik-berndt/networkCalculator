@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
 * {
 		margin: 0;
 		padding: 0;
@@ -5,8 +7,46 @@
 	}
 
 body {
+	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
 	background-color: #aaa;
 	font-size: 1rem;
 }
 
+.container {
+	padding: 2rem;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	border-radius: 3rem;
+	border: 1px solid #88888888;
+	background-color: #88888855;
+	box-shadow: 3px 4px 5px #aaaaaa66;
+}
 
+label {
+	font-size: 1.3rem;
+}
+
+input[type="text"] {
+	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
+	outline: none;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #FF7D7D;
+	font-size: 1.3rem;
+	color: #e9d5da
+}
+
+.button {
+	margin-top: 2rem;
+	/* width: 30%; */
+	text-align: center;
+	font-size: 1.2rem;
+	border: none;
+	letter-spacing: .5rem;
+	padding: 0.3rem 5rem;
+	font-weight: 900;
+	color: #e9d5da;
+	border-radius: 1rem;
+	background-color: #4E6C50;
+}

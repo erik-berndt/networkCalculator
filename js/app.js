@@ -7,7 +7,7 @@ $("#calc-form").submit((e) => {
     4: $("#four").val()
   }
   const cidr = $("#cidr").val();
-  
-
-  console.log(getNW(octals, cidr));
+  const result = getNW(octals, cidr);
+  $(".results").append(`<h1>${result[0][0]}.${result[0][1]}.${result[0][2]}.${result[0][3]}`)
+  $(".results").append(`<h1>${result[1][0]}.${result[1][1]}.${result[1][2]}.${result[1][3]}`)
 })
