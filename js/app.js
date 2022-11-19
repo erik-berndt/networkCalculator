@@ -10,7 +10,9 @@ $("#calc-form").submit((e) => {
   } else {
     $(".warning").empty();
     $(".results").empty();
-    $("#dezBin").show();
+    $("#decBin").show();
+    $("#binDec").hide();
+    $("#binHex").hide();
     $("#calc").hide();
     $("#new").show();
     const octals = {
@@ -39,19 +41,20 @@ $("#calc-form").submit((e) => {
         nx[i] = 0;
       }
     }
-
-    $(".results").append(`
+    $(".hosts").text(`Anzahl möglicher Hosts: ${2 ** (32 - cidr) - 2}`);
+    // $(".decResults").show();
+    $(".decResults").append(`
   <table>
     <tr class="t-row">
       <th class="t-head">Adresse</th>
-      <th class="t-head">1.Oktett:</th>
-      <th class="t-head">2.Oktett:</th>
-      <th class="t-head">3.Oktett:</th>
-      <th class="t-head">4.Oktett:</th>
+      <th class="t-head">1.Oktett…</th>
+      <th class="t-head">2.Oktett…</th>
+      <th class="t-head">3.Oktett…</th>
+      <th class="t-head">4.Oktett…</th>
       <th class="t-head">CIDR</th>
     </tr>
     <tr class="t-row">
-      <td class="t-desc">Eingabe IP</td>
+      <td class="t-desc">IP-Adresse</td>
       <td class="t-data">${one}.</td>
       <td class="t-data">${two}.</td>
       <td class="t-data">${three}.</td>
@@ -96,14 +99,14 @@ $("#calc-form").submit((e) => {
   <table>
     <tr class="t-row">
       <th class="t-head">Adresse</th>
-      <th class="t-head">1.Oktett:</th>
-      <th class="t-head">2.Oktett:</th>
-      <th class="t-head">3.Oktett:</th>
-      <th class="t-head">4.Oktett:</th>
+      <th class="t-head">1.Oktett…</th>
+      <th class="t-head">2.Oktett…</th>
+      <th class="t-head">3.Oktett…</th>
+      <th class="t-head">4.Oktett…</th>
       <th class="t-head">CIDR</th>
     </tr>
     <tr class="t-row">
-      <td class="t-desc">Eingabe IP</td>
+      <td class="t-desc">IP-Adresse</td>
       <td class="t-data">${get_bin(one)}.</td>
       <td class="t-data">${get_bin(two)}.</td>
       <td class="t-data">${get_bin(three)}.</td>
@@ -148,14 +151,14 @@ $("#calc-form").submit((e) => {
   <table>
     <tr class="t-row">
       <th class="t-head">Adresse</th>
-      <th class="t-head">1.Oktett:</th>
-      <th class="t-head">2.Oktett:</th>
-      <th class="t-head">3.Oktett:</th>
-      <th class="t-head">4.Oktett:</th>
+      <th class="t-head">1.Oktett…</th>
+      <th class="t-head">2.Oktett…</th>
+      <th class="t-head">3.Oktett…</th>
+      <th class="t-head">4.Oktett…</th>
       <th class="t-head">CIDR</th>
     </tr>
     <tr class="t-row">
-      <td class="t-desc">Eingabe IP</td>
+      <td class="t-desc">IP-Adresse</td>
       <td class="t-data">${get_hex(one)}.</td>
       <td class="t-data">${get_hex(two)}.</td>
       <td class="t-data">${get_hex(three)}.</td>
@@ -196,29 +199,29 @@ $("#calc-form").submit((e) => {
     </tr>
   </table>
   `)
-    $("#dezBin").click(() => {
-      $(".results").hide();
+    $("#decBin").click(() => {
+      $(".decResults").hide();
       $(".hexResults").hide();
-      $("#dezBin").hide();
-      $("#binHex").hide();
       $(".binResults").show();
+      $("#decBin").hide();
+      $("#binHex").hide();
       $("#binHex").show();
     })
-    $("#binDez").click(() => {
+    $("#binDec").click(() => {
       $(".binResults").hide();
       $(".hexResults").hide();
-      $("#binDez").hide();
+      $(".decResults").show();
+      $("#binDec").hide();
       $("#binHex").hide();
-      $(".results").show();
-      $("#dezBin").show();
+      $("#decBin").show();
     })
     $("#binHex").click(() => {
       $(".binResults").hide();
-      $(".results").hide();
-      $("#dezBin").hide();
-      $("#binHex").hide();
+      $(".decResults").hide();
       $(".hexResults").show();
-      $("#binDez").show();
+      $("#decBin").hide();
+      $("#binHex").hide();
+      $("#binDec").show();
     })
     $("#new").click(() => location.reload());
   }
