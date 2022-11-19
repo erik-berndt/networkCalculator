@@ -141,17 +141,81 @@ $("#calc-form").submit((e) => {
     </tr>
   </table>
   `)
+  $(".hexResults").append(`
+  <table>
+    <tr class="t-row">
+      <th class="t-head">Adresse</th>
+      <th class="t-head">1.Oktett:</th>
+      <th class="t-head">2.Oktett:</th>
+      <th class="t-head">3.Oktett:</th>
+      <th class="t-head">4.Oktett:</th>
+      <th class="t-head">CIDR</th>
+    </tr>
+    <tr class="t-row">
+      <td class="t-desc">Eingabe IP</td>
+      <td class="t-data">${get_hex(one)}.</td>
+      <td class="t-data">${get_hex(two)}.</td>
+      <td class="t-data">${get_hex(three)}.</td>
+      <td class="t-data">${get_hex(four)}</td>
+      <td class="t-data">/${cidr}</td>
+    </tr>
+    <tr class="t-row">
+      <td class="t-desc">Subnetzmaske</td>
+      <td class="t-data">${get_hex(dezMask[0])}.</td>
+      <td class="t-data">${get_hex(dezMask[1])}.</td>
+      <td class="t-data">${get_hex(dezMask[2])}.</td>
+      <td class="t-data">${get_hex(dezMask[3])}</td>
+      <td class="t-data">/${cidr}</td>
+    </tr>
+    <tr class="t-row">
+      <td class="t-desc">Netzwerk</td>
+      <td class="t-data">${get_hex(nw[0])}.</td>
+      <td class="t-data">${get_hex(nw[1])}.</td>
+      <td class="t-data">${get_hex(nw[2])}.</td>
+      <td class="t-data">${get_hex(nw[3])}</td>
+      <td class="t-data">/${cidr}</td>
+    </tr>
+    <tr class="t-row">
+      <td class="t-desc">Broadcast</td>
+      <td class="t-data">${get_hex(bc[0])}.</td>
+      <td class="t-data">${get_hex(bc[1])}.</td>
+      <td class="t-data">${get_hex(bc[2])}.</td>
+      <td class="t-data">${get_hex(bc[3])}</td>
+      <td class="t-data">/${cidr}</td>
+    </tr>
+    <tr class="t-row">
+      <td class="t-desc">Next</td>
+      <td class="t-data">${get_hex(nx[0])}.</td>
+      <td class="t-data">${get_hex(nx[1])}.</td>
+      <td class="t-data">${get_hex(nx[2])}.</td>
+      <td class="t-data">${get_hex(nx[3])}</td>
+      <td class="t-data">/--</td>
+    </tr>
+  </table>
+  `)
     $("#dezBin").click(() => {
       $(".results").hide();
+      $(".hexResults").hide();
       $("#dezBin").hide();
+      $("#binHex").hide();
       $(".binResults").show();
-      $("#binDez").show();
+      $("#binHex").show();
     })
     $("#binDez").click(() => {
       $(".binResults").hide();
+      $(".hexResults").hide();
       $("#binDez").hide();
+      $("#binHex").hide();
       $(".results").show();
       $("#dezBin").show();
+    })
+    $("#binHex").click(() => {
+      $(".binResults").hide();
+      $(".results").hide();
+      $("#dezBin").hide();
+      $("#binHex").hide();
+      $(".hexResults").show();
+      $("#binDez").show();
     })
   }
 })
