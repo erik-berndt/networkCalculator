@@ -1,4 +1,4 @@
-const hex = {
+const hexa = {
   10: "A",
   11: "B",
   12: "C",
@@ -8,28 +8,28 @@ const hex = {
 }
 
 
-function get_bin(x) {
-  let xBin = "";
+function get_bin(dec) {
+  let bin = "";
   for (let i = 7; i >= 0; i--) {
-    if (2 ** i <= x) {
-      xBin += "1";
-      x -= 2 ** i;
+    if (2 ** i <= dec) {
+      bin += "1";
+      dec -= 2 ** i;
     } else {
-      xBin += "0";
+      bin += "0";
     }
   }
-  return xBin;
+  return bin;
 }
 
-function get_hex(x) {
-  let xHex = "";
-  if (x > 15) {
-    const div = Math.floor(x / 16)
-    div > 9 ? xHex += hex[div]: xHex += div.toString();
-    x -= 16 * div;
+function get_hex(dec) {
+  let hex = "";
+  if (dec > 15) {
+    const div = Math.floor(dec / 16)
+    div > 9 ? hex += hexa[div]: hex += div.toString();
+    dec -= 16 * div;
   }
-  x > 9 ? xHex += hex[x]: xHex += x.toString();
-  return xHex;
+  dec > 9 ? hex += hexa[dec]: hex += dec.toString();
+  return hex;
 }
 
 function binToDec(bin) {
