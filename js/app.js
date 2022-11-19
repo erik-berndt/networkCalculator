@@ -5,7 +5,6 @@ $("#calc-form").submit((e) => {
   const three = Math.abs(parseInt($("#three").val()))
   const four = Math.abs(parseInt($("#four").val()))
   const cidr = $("#cidr").val();
-  console.log(getMask(cidr));
   if (((one || two || three || four) > 255) || (cidr > 32)) {
     $(".warning").text("Oktette: 0-255 CIDR: 0-32");
   } else {
@@ -24,8 +23,6 @@ $("#calc-form").submit((e) => {
     const result = getNW(octals, cidr);
     const nw = result[0];
     const bc = result[1];
-    console.log("netz", nw);
-    console.log("bc", bc);
     const nx = [...nw];
   
     if (bc[a] != 255) {
@@ -39,10 +36,6 @@ $("#calc-form").submit((e) => {
         nx[i] = 0;
       }
     }
-    console.log("---");
-    console.log("netz", nw);
-    console.log("bc", bc);
-
 
     $(".results").append(`
   <table>
