@@ -5,11 +5,14 @@ $("#calc-form").submit((e) => {
   const three = Math.abs(parseInt($("#three").val()))
   const four = Math.abs(parseInt($("#four").val()))
   const cidr = $("#cidr").val();
-  if (((one || two || three || four) > 255) || (cidr > 32)) {
+  if ((one > 255 || two > 255 || three > 255 || four > 255) || cidr > 32) {
     $(".warning").text("Oktette: 0-255 CIDR: 0-32");
   } else {
+    $(".warning").empty();
     $(".results").empty();
     $("#dezBin").show();
+    $("#calc").hide();
+    $("#new").show();
     const octals = {
       1: one,
       2: two,
@@ -217,5 +220,6 @@ $("#calc-form").submit((e) => {
       $(".hexResults").show();
       $("#binDez").show();
     })
+    $("#new").click(() => location.reload());
   }
 })

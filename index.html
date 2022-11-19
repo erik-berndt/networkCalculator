@@ -15,7 +15,7 @@
           <span class="warning"></span>
           <div class="input-field">
             <label for="one">IP-Adresse: </label>
-            <input id="one" type="text" name="one" required autocomplete="off" size="3">  
+            <input id="one" type="text" name="one" required autocomplete="off" size="3" autofocus>  
             <label for="two">.</label>
             <input id="two" type="text" name="two" required autocomplete="off" size="3">  
             <label for="three">.</label>
@@ -25,15 +25,16 @@
             <label for="cidr"> /</label>
             <input id="cidr" type="text" name="cidr" required autocomplete="off" size="2">
             <button class="button" id="calc" type="submit">go</button>
+            <button class="button" id="new" type="submit" hidden>new</button>
           </div>
         </form>  
       </div>
       <div class="results"></div>
       <div class="binResults" hidden></div>
       <div class="hexResults" hidden></div>
-      <button class="button" id="dezBin" type="submit" hidden>bin</button>  
-      <button class="button" id="binDez" type="submit" hidden>dez</button>  
-      <button class="button" id="binHex" type="submit" hidden>hex</button>  
+      <button class="button" id="dezBin" type="submit" hidden>convert to bin</button>  
+      <button class="button" id="binDez" type="submit" hidden>convert to dez</button>  
+      <button class="button" id="binHex" type="submit" hidden>convert to hex</button>  
       <div class="copy"><span>Copyright &copy;pampelmann</span></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
