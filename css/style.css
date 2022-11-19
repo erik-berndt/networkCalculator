@@ -8,13 +8,18 @@
 
 body {
 	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
-	background-color: #aaa;
+	background-color: #666;
 	font-size: 1rem;
 }
 
 .container {
 	padding: 2rem;
 	width: 50%;
+	height: 55vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center	;
+	justify-content: space-between;
 	margin: 0 auto;
 	margin-top: 2rem;
 	border-radius: 3rem;
@@ -23,6 +28,10 @@ body {
 	box-shadow: 3px 4px 5px #aaaaaa66;
 }
 
+
+.warning {
+	color: #FF7D7D;
+}
 label {
 	font-size: 1.3rem;
 }
@@ -30,6 +39,7 @@ label {
 input[type="text"] {
 	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
 	outline: none;
+	text-align: right;
 	background-color: transparent;
 	border: none;
 	border-bottom: 1px solid #FF7D7D;
@@ -38,15 +48,64 @@ input[type="text"] {
 }
 
 .button {
-	margin-top: 2rem;
+	margin-left: 2rem;
 	/* width: 30%; */
 	text-align: center;
 	font-size: 1.2rem;
 	border: none;
-	letter-spacing: .5rem;
-	padding: 0.3rem 5rem;
+	/* letter-spacing: .5rem; */
+	padding: 0.3rem 1rem;
 	font-weight: 900;
 	color: #e9d5da;
 	border-radius: 1rem;
 	background-color: #4E6C50;
+}
+
+table {
+	/* border: 1px solid black; */
+	color: #e9d5da;
+	border-radius: 3px;
+}
+
+tr,
+th,
+td {
+	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
+	font-size: 1.3rem;
+	padding: .3rem .4rem;
+	border-radius: 3px;
+}
+
+th {
+	background-color: #aaa;
+	color: #000;
+	/* border-left: 1px solid black; */
+	border-left: 1px solid transparent;
+}
+
+td.t-data {
+	background-color: #444;
+	/* border-left: 1px solid black; */
+	/* border-top: 1px solid black; */
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	text-align: right;
+}
+
+td.t-desc {
+	background-color: #aaa;
+	color: #000;
+	/* border-top: 1px solid black;  */
+	border-top: 1px solid transparent;
+}
+
+@media screen and (max-width: 500px) {
+	html {
+		font-size: 50%;
+	}
+	.container {
+		background-color: transparent;
+		border: none;
+		width: 100%;
+	}
 }

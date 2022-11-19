@@ -73,3 +73,19 @@ function getNW(octals, cidr) {
   }
   return [nw, bc];
 }
+
+function getMask(cidr) {
+  let binMask = [];
+  let dezMask = [];
+  let k = 0;
+  for (let i = 0; i < 4; i++) {
+    let oct = "";
+    for (let j = 0; j < 8; j++) {
+      k < cidr ? oct += "1" : oct += "0";
+      k++
+    }
+    binMask.push(oct);
+    dezMask.push(binToDec(oct));
+  }
+  return [binMask, dezMask];
+}
