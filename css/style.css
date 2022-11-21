@@ -11,25 +11,32 @@ body {
 	background-color: #666;
 	background-image: url('../images/platine.jpg');
 	background-size: cover;
+	background-repeat: no-repeat;
 	font-size: 1rem;
 }
 
 .container {
 	padding: 2rem;
 	width: 60%;
-	height: 55vh;
+	height: 60vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center	;
 	justify-content: space-between;
 	margin: 0 auto;
 	margin-top: 2rem;
-	border-radius: 8px;
-	border: 1px solid #88888888;
-	background-color: #888888aa;
-	box-shadow: 3px 4px 5px #aaaaaa66;
+	border-radius: 2rem;
+	/* border: 1px solid #eca2a288; */
+	border: none;
+	background-color: #64575777;
+	box-shadow: 3px 2px 5px #61535366;
 }
 
+.heading {
+	color: #222222;
+	font-weight: 900;
+	font-size: 2.5rem;
+}
 
 .warning {
 	color: #FF7D7D;
@@ -85,14 +92,14 @@ td {
 }
 
 th {
-	background-color: #aaa;
+	background-color: #946f6faa;
 	color: #000;
 	/* border-left: 1px solid black; */
 	border-left: 1px solid transparent;
 }
 
 td.t-data {
-	background-color: #444;
+	background-color: #6c3e3e99;
 	/* border-left: 1px solid black; */
 	/* border-top: 1px solid black; */
 	border-left: 1px solid transparent;
@@ -101,19 +108,63 @@ td.t-data {
 }
 
 td.t-desc {
-	background-color: #aaa;
+	background-color: #b3909099;
 	color: #000;
 	/* border-top: 1px solid black;  */
 	border-top: 1px solid transparent;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1300px) {
 	html {
-		font-size: 50%;
+		font-size: 90%;
+	}
+	
+	.container {
+		background-color: transparent;
+		border: none;
+		width: 100%;
+		box-shadow: none;
+	}
+
+	th {
+	background-color: #946f6f;
+	}
+
+	td.t-data {
+	background-color: #6c3e3e;
+	}
+
+	td.t-desc {
+		background-color: #b39090;
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+	html {
+		font-size: 80%;
 	}
 	.container {
 		background-color: transparent;
 		border: none;
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	html {
+		font-size: 67%;
+	}	
+}
+
+@media screen and (max-width: 500px) {
+	html {
+		font-size: 52%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	html {
+		font-size: 46%;
 	}
 }
