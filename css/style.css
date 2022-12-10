@@ -9,7 +9,7 @@
 body {
 	font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
 	background-color: #666;
-	background-image: url('../images/platine.jpg');
+	background-image: url('../images/server.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-size: 1rem;
@@ -24,6 +24,7 @@ body {
 	align-items: center	;
 	justify-content: space-between;
 	margin: 0 auto;
+	color: #e9d4da;
 	margin-top: 2rem;
 	border-radius: 2rem;
 	/* border: 1px solid #eca2a288; */
@@ -33,7 +34,8 @@ body {
 }
 
 .heading {
-	color: #222222;
+	color: #e9d4da;
+	/* color: #222222; */
 	font-weight: 900;
 	font-size: 2.5rem;
 }
